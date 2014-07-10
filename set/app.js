@@ -34,7 +34,7 @@ app.get('/users', users.list);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
-    var err = new Error(connectStr);
+    var err = new Error("Could not connect to DB");
     err.status = 404;
     next(err);
 });
