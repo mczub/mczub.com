@@ -83,6 +83,6 @@ app.get('/', function(req, res){
 });
 
 var port = process.env.port || 1337;
-var server = app.listen(port,function(){
+app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
 });
