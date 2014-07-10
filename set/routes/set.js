@@ -16,7 +16,8 @@ SetGame.prototype = {
 	newGame: function(req,res){
 		var player = req.body.player;
 		newGame = new game();
-		newGame.gamePlayerState = {player: player, score : 0};
+		newGame.playerState.name = player;
+		newGame.playerState.score = 0;
 		newGame.boardState = [{card : '1111'}, {card : '2222'}, {card : '3333'}];
 		newGame.save(function savedGame(err){
 			if (err){

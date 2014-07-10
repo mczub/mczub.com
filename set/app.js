@@ -10,6 +10,7 @@ var routes = require('./routes');
 var users = require('./routes/user');
 var GameList = require('./routes/set');
 var gameList = new GameList(process.env.CUSTOMCONNSTR_MONGOLAB);
+//var gameList = new GameList('localhost');
 
 var app = express();
 
@@ -31,11 +32,11 @@ app.post('/newGame', gameList.newGame.bind(gameList));
 app.get('/users', users.list);
 
 /// catch 404 and forwarding to error handler
-//app.use(function(req, res, next) {
-//    var err = new Error('Not Found');
-//    err.status = 404;
-//    next(err);
-//});
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
 
 /// error handlers
 

@@ -1,21 +1,22 @@
-h1 #{title}
+link(href='/stylesheets/style.css', rel='stylesheet')
+h1 title
 table(border="1")
-tr
-  td Player
-  td Score
-  td Board
-  td Deck
-each game in games
-  tr
-    td #{game.playerState.player}
-    td #{game.playerState.score}
-    td #{game.boardState}
-    td #{game.deckState}
+	tr
+		td Player
+		td Score
+		td Board
+		td Deck
+	each game in games
+		tr
+			td #{game.playerState.name}
+			td #{game.playerState.score}
+			td #{game.boardState}
+			td #{game.deckState}
 hr
 form(action="/newGame", method="post")
-  table(border="1") 
-    tr
-      td Player Name: 
-      td 
-        input(name="player", type="textbox")
-  input(type="submit", value="New Game")
+	table(border="1") 
+		tr
+			td Player Name: 
+			td 
+				input(name="player", type="textbox")
+	input(type="submit", value="New Game")
