@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes');
 var users = require('./routes/user');
+var GameList = require('./routes/set');
+var gameList = new GameList(process.env.CUSTOMCONNSTR_MONGOLAB_URI);
 
 var app = express();
 
@@ -23,7 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
+app.get('/'), gameList.showAllGames.bind(gameList));
+app.post('/newGame', gamelist.newGame.bind(gameList));
 app.get('/users', users.list);
 
 /// catch 404 and forwarding to error handler
@@ -57,3 +61,8 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+var port = process.env.PORT || 1337;
+var server = app.listen(port,function(){
+    console.log('listening on port %d', server.address().port);
+})

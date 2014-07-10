@@ -1,5 +1,23 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+h1 #{title}
+table(border="1")
+tr
+  td Player
+  td Score
+  td Board
+  td Deck
+each game in games
+  tr
+    td #{game.playerState.player}
+    td #{game.playerState.score}
+    td #{game.boardState}
+    td #{game.deckState}
+hr
+form(action="/newGame", method="post")
+  table(border="1") 
+    tr
+      td Item Name: 
+      td 
+        input(name="player", type="textbox")
+  input(type="submit", value="New Game")
