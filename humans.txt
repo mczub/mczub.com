@@ -1,0 +1,18 @@
+/* CREATED BY */
+Matthew Czubakowski
+Twitter: @mczub
+Web: www.mczub.com
+
+/* COMPONENTS */
+/* GUMBY FRAMEWORK */
+Digital Surgeons
+Twitter: @digitalsurgeons
+Twitter: @gumbycss
+Web: www.digitalsurgeons.com
+Web: www.gumbyframework.com
+                     
+/* BXSLIDER /*
+Steven Wanderski
+bxCreative
+Twitter: @stevenwanderski
+Web: www.bxcreative.com

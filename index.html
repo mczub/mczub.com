@@ -1,0 +1,549 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+			 More info: h5bp.com/b/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>mczub.com</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="Matthew Czubakowski @mczub">
+
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+	<!-- Facebook Metadata /-->
+	<!--meta property="fb:page_id" content="" /-->
+	<meta property="og:image" content="http://mczub.com/img/mczub_logo.png" />
+	<meta property="og:description" content="My name is Matthew Czubakowski and this is my personal website."/>
+	<meta property="og:title" content="mczub.com"/>
+
+	<!-- Google+ Metadata /-->
+	<meta itemprop="name" content="">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<!-- We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+		 However, there is a blank style.css in the css directory should you prefer -->
+	<link rel="stylesheet" href="css/gumby.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./bxslider/jquery.bxslider.css">
+	<!--<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/osp-din" rel="stylesheet" type="text/css"/> -->
+	<!--link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'-->
+	<script src="js/libs/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body class="docs js" id="inner-doc">
+	<section>
+		<div class="row navbar" id="mobile-navi" gumby-fixed="top">
+		<a class="toggle" gumby-trigger="#mobile-navi > ul" href="#"><i class="icon-menu"></i></a>
+		<h1 class "one column logo">
+			<a href="#" class="skip" gumby-update gumby-duration="600" gumby-offset="-40" gumby-goto="[data-target='main']">
+				<img src="img/mobile_nav_logo.png"></img>
+			</a>
+		</h1>	
+		<ul class="eight columns">
+			<li><a href="#me" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='me']">Me</a></li>
+			<li><a href="#resume" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='resume']">Resume</a></li>
+			<li><a href="#projects" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='projects']">Projects</a></li>
+			<li><a href="#music" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='music']">Music</a></li>
+			<li><a href="#connect" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='connect']">Connect</a></li>
+		</ul>
+		</div>
+	</section>
+<article class="panel centered text-center" id="panel-nav" full-screen>
+<nav id="sidebar-nav-holder" class="navbar fixed">
+    <div class="row">
+    	<p class="four columns nav-logo">
+    		<a href="#main" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='main']"><img src="./img/mobile_nav_logo.png" id="nav-logo" height="60" ></img></a>
+    	</p>
+      	<nav class="eight columns pull_right">
+            <ul id="sidebar-nav">
+                <li id="me-sidebar">
+                  <a href="#me" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='me']">Me</a>
+                </li>
+                
+                <li id="resume-sidebar">
+                  <a href="#resume" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='resume']">Resume</a>
+                </li>
+                
+                <li id="projects-sidebar">
+                  <a href="#projects" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='projects']">Projects</a>
+                </li>
+                
+                <li id="music-sidebar">
+                  <a href="#music" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='music']">Music</a>
+                </li>
+
+                 <li id="connect-sidebar">
+                  <a href="#connect" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='connect']">Connect</a>
+                </li>
+            </ul>
+           </nav>
+    </div>
+</nav>
+</article>
+<article class="panel" id="panel-1" full-screen>
+	<div class="row" id="main" data-target="main">
+		<div class="twelve columns centered text-center" id="div-main">
+			<img style="margin-top:50px"src="img/mczub_logo.png" id="logo"></img>
+			<div id="twitch-embed" class="twitch video" style="display:none">
+ 				<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=mczub1" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=mczub1&auto_play=true&start_volume=25" /></object></iframe >
+  			</div>
+			<p class="btn-arrow large-circle"><a href="#me" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='me']"></a></p>
+		</div>
+	</div>
+
+</article>
+
+
+<!--<article class="panel text-center header" id="panel-me-header" data-target="me" full-screen>
+<h1 class="inview" gumby-target="#me-sidebar"  gumby-offset="0|-400">About Me</h1>
+</article>-->
+<article class="panel" id="panel-me" full-screen data-target="me">
+	<div class="row">
+
+	<section class="eleven columns centered" full-screen>
+			<div id="div-me" class="">
+				<h1 class="inview" gumby-target="#me-sidebar" gumby-offset="200|0">Hi.</h1>
+				<p>My name is Matthew Czubakowski, and welcome to my personal website.</p>
+				<p>I'm an electrical engineer living in Southern California. I graduated from <a href="http://caltech.edu">Caltech</a> in 2009.</p>
+				<p>By day, I work in the Aerospace industry. I have a <a href="#resume" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='resume']">broad skillset</a> with experience in mixed-signal ASIC design, systems engineering, software development, and circuit design and test.</p>
+				<p>By night, I <a href="#projects" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='projects']">experiment</a> with responsive web design, software development, music, and video game livestreaming.</p>
+				<p>Feel free to <a href="#connect" class="skip" gumby-update gumby-duration="600" gumby-offset="-60" gumby-goto="[data-target='connect']">connect</a> with me through social media. I'm easiest to get a hold of through <a href="mailto:mczub@mczub.com">e-mail</a>, <a href="http://twitter.com/mczub">Twitter</a>, and <a href="http://facebook.com/mczub">Facebook</a>.</p>
+				<p>Thanks for visiting!</p>
+			</div>
+	</section>
+</div>
+</article>
+<article class="panel header" id="panel-resume-header" data-target="resume" full-screen>
+<div class="row">
+		<h1 class="eleven columns centered inview" gumby-target="#resume-sidebar" gumby-offset="650|-400">Resume</h1>
+</div>
+</article>
+<article class="panel" id="panel-resume" full-screen>
+	<div class="row">
+		<section class="twelve columns">
+			<div id="div-resume">
+				<ul class="two_up tiles">
+				<a href="./Czubakowski_Resume_2014_web.pdf" class="resume text-center tile"><li>Download as PDF</li></a>
+				<a href="http://linkedin.com/in/mczub" class="resume text-center tile"><li>View on LinkedIn</li></a>
+				</ul><br>
+				<p>For a more detailed resume or specific job-related inquiries, please <a style="display:inline" href="mailto:mczub@mczub.com">contact me via e-mail</a>.</p>
+				<br>
+				<a href="#" class="resume toggle" gumby-trigger="#education">EDUCATION</a>
+					<div id="education" style="margin-left:1em; font-size:90%"><p>California Institute of Technology, BS, Electrical Engineering, Class of 2009</p>
+						<p style="margin-left:2em; font-size:100%">Courses included Electromagnetic Engineering, Solid-State Electronics for Integrated Circuits, Digital Signal Processing, Demonstration Lectures in Optics, Microprocessor Systems Laboratory, and Waves, Quantum Physics, and Statistical Mechanics
+						</p>
+					</div>
+				<a href="#" class="resume toggle" gumby-trigger="#workexp">WORK EXPERIENCE</a>
+					<div id="workexp" style="margin-left:1em; font-size:90%">
+						<p>Raytheon Space and Airborne Systems, Electrical Engineer II, September 2009-Present</p>
+							<p style="margin-left:2em; font-size:100%">- Designed, tested, and validated electronic systems at module, PCB, and circuit levels</p>
+							<p style="margin-left:2em; font-size:100%">- Performed test systems design, including both hardware and software</p>
+							<p style="margin-left:2em; font-size:100%">- Completed schematic capture, physical design, integration, power analysis, timing closure, functional verification, and tape-out from transistor to chip level</p>
+							<p style="margin-left:2em; font-size:100%">- Designed and implemented digital and analog blocks in multiple mixed-signal ASICs with first-pass success in submicron processes using Cadence tools</p>
+							<p style="margin-left:2em; font-size:100%">- Provided production support, including documenting acceptance requirements, updating test procedures, and coordinating documentation releases</p>
+						<p style="margin-left:1em; font-size:90%"><p>Caltech SURF, Aerospace Corporation SURF Fellow, Summer 2007-Summer 2008</p>
+							<p style="margin-left:2em; font-size:100%">- Conducted research on the subject of Silver-Bonded Lithium Niobate Thin Films under Dr. Harry Atwater for use in electro-optic waveguides and displays</p>
+						<p style="margin-left:1em; font-size:90%"><p>Bionic Harvest Inc., Engineering Intern, Summer 2006</p>
+							<p style="margin-left:2em; font-size:100%">- Constructed and tested MEMS micro-power generator devices</p>
+					</div>
+
+				<a href="#" class="resume toggle" gumby-trigger="#pubs">PUBLICATIONS AND CONFERENCES</a>
+					<div id="pubs" style="margin-left:1em; font-size:90%">
+						<p style="margin-left:2em; font-size:100%">K. Diest, M. J. Archer, J. Dionne, Y. J. Park, M. Czubakowski, H. A. Atwater, Silver diffusion bonding and layer transfer of lithium niobate to silicon, Applied Physics Letters 93, 092906 (2008) <a style="display:inline" href="http://authors.library.caltech.edu/11585/1/DIEapl08.pdf">[PDF]</a></p>
+						<p style="margin-left:2em; font-size:100%">K. Diest, J. Dionne, M. Czubakowski, M. J. Archer, Y. J. Park, H. A. Atwater, Full-Color Electro-Optic Resonator-Based Plasmonic Display, MRS Spring Conference, 2008, (L5.5)</p>
+					</div>
+				<a href="#" class="resume toggle" gumby-trigger="#skills">SKILLS</a>
+					<div id="skills" style="margin-left:1em; font-size:90%">
+						<p style="margin-left:2em; font-size:100%">- Circuit design, layout, and schematic tools, including Cadence Virtuoso, Allegro, Encounter, Analog Design Environment, TCL scripting, NCSim, and SPICE tools</p>
+						<p style="margin-left:2em; font-size:100%">- Fabrication and testing of optical, solid-state, and RF devices in a clean room environment</p>
+						<p style="margin-left:2em; font-size:100%">- Lab equipment including oscilloscopes, network analyzers, function generators, lock-in amplifiers, wafer probe, and surface-mount soldering</p>
+						<p style="margin-left:2em; font-size:100%">- C++, Verilog, x86 assembly, Python, and Javascript programming</p>
+						<p style="margin-left:2em; font-size:100%">- Some experience with C, Matlab, Labview, Standard ML, PHP, CSS, Git, and Subversion</p>
+						<p style="margin-left:2em; font-size:100%">- Solid-state and thin-film fabrication and testing methods, including wafer bonding, photolithography, sputter deposition, and SEM (scanning electron microscopy)</p>
+					</div>
+			</article>
+		</section>
+	</div>
+</article>
+<article class="panel header" id="panel-projects-header" data-target="projects" full-screen>
+<div class="row">
+<h1 class="eleven columns centered inview" gumby-target="#projects-sidebar" gumby-offset="400|-400">Projects</h1>
+</div>
+</article>
+<article class="panel" id="panel-projects" full-screen>
+	<div class="row">
+		<section class="twelve columns">
+		<div id="div-projects">
+			<div id="projects-carousel" class="bxslider">
+				<div id="project-slide">
+					<!--img id="social" style="border:2px solid;" src="./img/screenshot.png" width="150px"/-->
+					<a><div id="slide-content"><img src="./img/screenshot.png"/><h3>mczub.com</h3>
+					<p>My personal website</p>
+					<p>CSS3, HTML5, JavaScript, and Gumby UI Framework</p></div></a>
+				</div>
+				<div id="project-slide">
+					<!--img id="social" style="border:2px solid;" src="./img/screenshot.png" width="150px"/-->
+					<a href="http://mczub.com/set_beta"><div id="slide-content"><img src="./img/set.png"/><h3>Set</h3>
+					<p>Web version of the card game Set</p>
+					<p>PHP, Python, JavaScript, and Pusher API</p></div></a>
+				</div>
+				<div id="project-slide">
+					<a href="http://twitch.tv/mczub1"><div id="slide-content"><img src="./img/twitch_big.png"/><h3>twitch.tv/mczub1</h3>
+					<p>My Twitch video game streaming channel</p>
+					<p class="twitch-live"></p></div></a>
+				</div>
+			</div>
+			<p>More to be added soon!</p>
+		</div>
+			
+		</section>
+	</div>
+</article>
+<article class="panel  header" id="panel-music-header" data-target="music" full-screen>
+<div class="row">
+	<h1 class="eleven columns centered inview" gumby-target="#music-sidebar"  gumby-offset="400|-400">Music</h1>
+</div>
+</article>
+<article class="panel" id="panel-music" full-screen>
+	<div class="row">
+		<section class="twelve columns">
+			<div id="div-music" >
+				<p>I'm a classically trained pianist and violinist with experience playing both solo and in orchestras and ensembles. I don't play as much anymore, but every once in a while I'll record a cover and post it either on my <a href="http://youtube.com/mczub1">YouTube</a> or <a href="http://soundcloud.com/mczub">SoundCloud</a> pages. For performance or collaboration requests, feel free to <a href="mailto:mczub@mczub.com">contact me via e-mail</a>.</p>
+				<br>
+				<article class="youtube video">
+  					<iframe width="560" height="315" src="http://www.youtube.com/embed/7VA8CqqjxVc"></iframe>
+				</article>
+				<br>
+				<article>
+				<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/5806112&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=false"></iframe>
+				</article>
+			</div>
+		</section>
+	</div>
+</article>
+<article class="panel  header" id="panel-connect-header" data-target="connect" full-screen>
+<div class="row">
+	<h1 class="eleven columns centered inview" gumby-target="#connect-sidebar"  gumby-offset="400|-400">Connect</h1>
+</div>
+</article>
+<article class="panel" id="panel-connect" full-screen>
+	<div class="row">
+		<section class="twelve columns">
+			<div id="div-connect" class="two_up tiles">
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="mailto:mczub@mczub.com"><img id="social" src="./img/email.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="mailto:mczub@mczub.com"><h3>Email</h3>
+						<p>mczub@mczub.com</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://facebook.com/mczub"><img id="social" src="./img/facebook.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://facebook.com/mczub"><h3>Facebook</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://twitter.com/mczub"><img id="social" src="./img/twitter.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://twitter.com/mczub"><h3>Twitter</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://linkedin.com/in/mczub"><img id="social" src="./img/linkedin.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://linkedin.com/in/mczub"><h3>LinkedIn</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://youtube.com/mczub1"><img id="social" src="./img/youtube.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://youtube.com/mczub1"><h3>YouTube</h3>
+						<p>mczub1</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://soundcloud.com/mczub"><img id="social" src="./img/soundcloud.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://soundcloud.com/mczub"><h3>SoundCloud</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://twitch.tv/mczub1"><img id="social" src="./img/twitch.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://twitch.tv/mczub1"><h3>Twitch</h3>
+						<p>mczub1</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://plus.google.com/108065404970743437534"><img id="social" src="./img/googleplus.png" width="60" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://plus.google.com/108065404970743437534"><h3>Google+</h3>
+						</a>
+					</div>		
+				</article>
+			</div>
+			<div id="div-connect-mobile" class="">
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="mailto:mczub@mczub.com"><img id="social" src="./img/email.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="mailto:mczub@mczub.com"><h3>Email</h3>
+						<p>mczub@mczub.com</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://facebook.com/mczub"><img id="social" src="./img/facebook.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://facebook.com/mczub"><h3>Facebook</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://twitter.com/mczub"><img id="social" src="./img/twitter.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://twitter.com/mczub"><h3>Twitter</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://linkedin.com/in/mczub"><img id="social" src="./img/linkedin.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://linkedin.com/in/mczub"><h3>LinkedIn</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://youtube.com/mczub1"><img id="social" src="./img/youtube.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://youtube.com/mczub1"><h3>YouTube</h3>
+						<p>mczub1</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://soundcloud.com/mczub"><img id="social" src="./img/soundcloud.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://soundcloud.com/mczub"><h3>SoundCloud</h3>
+						<p>mczub</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://twitch.tv/mczub1"><img id="social" src="./img/twitch.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://twitch.tv/mczub1"><h3>Twitch</h3>
+						<p>mczub1</p></a>
+					</div>		
+				</article>
+				<article class="valign tile">
+					<div>
+						<a style="display:inline" href="http://plus.google.com/108065404970743437534"><img id="social" src="./img/googleplus.png" width="40" /></a>
+					</div>
+					<div>
+						<a style="display:inline" href="http://plus.google.com/108065404970743437534"><h3>Google+</h3>
+						</a>
+					</div>		
+				</article>
+			</div>
+		</section>
+	</div>
+</article>
+
+	<!-- Grab Google CDN's jQuery, fall back to local if offline -->
+	<!-- 2.0 for modern browsers, 1.10 for .oldie -->
+	<script>
+	var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
+	if(!oldieCheck) {
+	document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
+	} else {
+	document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
+	}
+	</script>
+	<script>
+	if(!window.jQuery) {
+	if(!oldieCheck) {
+	  document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+	} else {
+	  document.write('<script src="js/libs/jquery-1.10.1.min.js"><\/script>');
+	}
+	}
+	</script>
+
+
+	<!--
+	Include gumby.js followed by UI modules followed by gumby.init.js
+	Or concatenate and minify into a single file -->
+	<!--<script src="js/libs/gumby.min.js"></script>-->
+
+	<script gumby-touch="js/libs" src="js/libs/gumby.js"></script>
+	<script src="js/libs/gumby.js"></script>
+	<script src="js/libs/ui/gumby.retina.js"></script>
+	<script src="js/libs/ui/gumby.fixed.js"></script>
+	<script src="js/libs/ui/gumby.skiplink.js"></script>
+	<script src="js/libs/ui/gumby.toggleswitch.js"></script>
+	<script src="js/libs/ui/gumby.checkbox.js"></script>
+	<script src="js/libs/ui/gumby.radiobtn.js"></script>
+	<script src="js/libs/ui/gumby.tabs.js"></script>
+	<script src="js/libs/ui/gumby.navbar.js"></script>
+	<script src="js/libs/ui/gumby.inview.js"></script>
+	<script src="js/libs/ui/jquery.validation.js"></script>
+	<script src="js/libs/gumby.init.js"></script>
+
+	<!--
+	Google's recommended deferred loading of JS
+	gumby.min.js contains gumby.js, all UI modules and gumby.init.js
+
+	Note: If you opt to use this method of defered loading,
+	ensure that any javascript essential to the initial
+	display of the page is included separately in a normal
+	script tag.
+
+	<script type="text/javascript">
+	function downloadJSAtOnload() {
+	var element = document.createElement("script");
+	element.src = "js/libs/gumby.min.js";
+	document.body.appendChild(element);
+	}
+	if (window.addEventListener)
+	window.addEventListener("load", downloadJSAtOnload, false);
+	else if (window.attachEvent)
+	window.attachEvent("onload", downloadJSAtOnload);
+	else window.onload = downloadJSAtOnload;
+	</script> -->
+
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Change UA-XXXXX-X to be your site's ID -->
+	<!--<script>
+	window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+	Modernizr.load({
+	  load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+	});
+	</script>-->
+
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+	   chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+	<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+	<script src="./bxslider/jquery.bxslider.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="js/libs/trianglify.js"></script>
+
+	<script>
+		function twitchStatus() {
+			Twitch.init({clientId: '7jsqg1b7e9yw42hfycun8ql9feqxnbp'}, function(error, status) {
+
+	  		});
+			var twitchAPI = "https://api.twitch.tv/kraken/streams/mczub1?callback=?";
+			$.getJSON( twitchAPI, function(data) {
+				if (data.stream == null)
+				{
+					$(".twitch-live").append("Currently not broadcasting");
+				}
+				else
+				{ 
+					$(".twitch-live").append("Currently broadcasting!");
+					$("#logo").hide();
+					$("#twitch-embed").show();
+				}
+			});
+				/**/
+			
+		}
+		window.onload = twitchStatus();	
+	</script>
+	<script>
+	    $(document).ready(function() {
+    	$('#projects-carousel').bxSlider();
+    	var d = new Date();
+    	var h = d.getHours();
+    	var colors = 
+    	{
+    		0: ["#969696","#737373","#525252","#252525","#121212"],
+    		1: ["#969696","#737373","#525252","#252525","#121212"],
+    		2: ["#969696","#737373","#525252","#252525","#121212"],
+    		3: ["#969696","#737373","#525252","#252525","#121212"],
+    		4: ["#969696","#737373","#525252","#252525","#121212"],
+    		5: colorbrewer.YlOrBr[9],
+    		6: colorbrewer.YlOrBr[9],
+    		7: colorbrewer.YlOrBr[9],
+    		8: colorbrewer.PuBuGn[9],
+    		9: colorbrewer.PuBuGn[9],
+    		10: colorbrewer.PuBuGn[9],
+    		11: colorbrewer.PuBu[9],
+    		12: colorbrewer.PuBu[9],
+    		13: colorbrewer.PuBu[9],
+    		14: colorbrewer.BrBG[9],
+    		15: colorbrewer.BrBG[9],
+    		16: colorbrewer.BrBG[9],
+    		17: colorbrewer.PuOr[9],
+    		18: colorbrewer.PuOr[9],
+    		19: colorbrewer.PuOr[9],
+    		20: colorbrewer.BuPu[9],
+    		21: colorbrewer.BuPu[9],
+    		22: colorbrewer.BuPu[9],
+    		23: ["#969696","#737373","#525252","#252525","#121212"]
+
+    	}
+     	var t = new Trianglify({
+     		x_gradient : colors[h],
+     		y_gradient : colors[h],
+     		noiseIntensity: 0,
+     		cellpadding: 0,
+     		cellsize: 150
+     	});
+     	var pattern = t.generate(document.body.clientWidth,document.body.clientHeight);
+     	document.body.setAttribute('style', 'background-image: '+pattern.dataUrl);
+    	});
+    </script>
+  </body>
+</html>

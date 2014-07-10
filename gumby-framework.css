@@ -1,0 +1,626 @@
+
+
+
+
+  
+
+
+
+
+
+  
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 9]><!--> 	<html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>JavaScript UI Kit | Gumby Framework</title>
+    <meta name="description" content="Gumby Framework JavaScript brings the UI kit to life, with the option to extend each module to suit your needs" />
+    <meta name="author" content="/humans.txt">
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
+    <meta name="google-site-verification" content="TTuqn2YYupgiGLoJebl_q8v1FUvs9VZW08BuZ7aiGuY" />
+
+    <!--Facebook Metadata /-->
+  	<meta property="og:url" content="http://gumbyframework.com/docs/components" />
+    <meta property="og:image" content="http://gumbyframework.com/facebook.jpg?1379423984" />
+  	<meta property="og:description" content="Gumby Framework JavaScript brings the UI kit to life, with the option to extend each module to suit your needs"/>
+  	<meta property="og:title" content="JavaScript UI Kit | Gumby Framework"/>
+
+    <!--Google+ Metadata /-->
+    <meta itemprop="url" content="http://gumbyframework.com/docs/components" />
+  	<meta itemprop="name" content="JavaScript UI Kit | Gumby Framework">
+  	<meta itemprop="description" content="Gumby Framework JavaScript brings the UI kit to life, with the option to extend each module to suit your needs">
+  	<meta itemprop="image" content="http://gumbyframework.com/facebook.jpg?1379423984">
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="http://gumbyframework.com/css/gumby.css?1379423984">
+
+    
+      <link rel="stylesheet" href="http://gumbyframework.com/css/prism.css?v=091613">
+    
+
+    <script src="/bower_components/gumby/js/libs/modernizr-2.6.2.min.js"></script>
+  </head>
+
+  <body class="docs js" id="inner-doc">
+    <nav id="navbar-main-nav" class="navbar">
+  <div class="row">
+    <a class="toggle" gumby-trigger="#navbar-main-nav #main-nav" href="#"><i class="icon-menu"></i></a>
+    <h1 class="four columns logo">
+      <a href="/">
+        <img src="http://gumbyframework.com/img/gumby_mainlogo.png" gumby-retina>
+      </a>
+    </h1>
+    <nav class="ten columns pull_right">
+      <ul id="main-nav">
+        <li><a href="/features/"><span>Features </span><i class="icon-archive" title="Features"></i></a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="/features/">The Grid</a></li>
+              <li><a href="/features/ui-kit/">UI Kit</a></li>
+              <li><a href="/features/toggles-switches/">Toggles &amp; Switches</a></li>
+              <li><a href="/features/fancy-tiles/">Fancy Tiles</a></li>
+              <li><a href="/features/shuffle/">Shuffle</a></li>
+              <li><a href="/features/responsive-images/">Responsive Images</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="/docs/"><span>Documentation </span><i class="icon-doc-text" title="Documentation"></i></a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="/docs/">Getting Started</a></li>
+              <li><a href="/docs/claymate/">Claymate</a></li>
+              <li><a href="/docs/grid/">The Grid</a></li>
+              <li><a href="/docs/ui-kit/">UI Kit</a></li>
+              <li><a href="/docs/components/">Components</a></li>
+              <li><a href="/docs/extensions/">Extensions</a></li>
+              <li><a href="/docs/mixins/">Mixins</a></li>
+              <li><a href="/docs/javascript/">JavaScript</a></li>
+              <li><a href="/docs/designers/">Designers</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="http://gumbyframework.com/customize"><span>Customize </span><i class="icon-cog" title="Customize"></i></a></li>
+        <li><a href="https://plus.google.com/communities/108760896951473344451" target="_blank"><span>Community </span><i class="icon-chat" title="community"></i></a></li>
+        <li>
+          <p class="medium pretty default btn icon-github icon-left">
+            <a href="https://github.com/GumbyFramework/Gumby">GitHub</a>
+          </p>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</nav>
+
+    <div class="wrapper shaded">
+      <div id="inner-nav" class="row">
+  <div class="fourteen columns">
+    <ul>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/">Getting Started</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/claymate/">Claymate</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/grid/">The Grid</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/ui-kit/">UI Kit</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn active"><a href="/docs/components/">Components</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/extensions/">Extensions</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/mixins/">Mixins</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/javascript/">JavaScript</a></div>
+      </li>
+      <li>
+        <div class="medium metro rounded btn "><a href="/docs/designers/">Designers</a></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+
+    <div class="wrapper nopad">
+      <div class="row">
+        <section class="four columns">
+          <nav id="sidebar-nav-holder" class="vertical-nav" gumby-fixed="top" gumby-pin="[data-target='intrinsic-ratio-video']">
+            <ul id="sidebar-nav">
+              
+                <li class="active">
+                  <a href="#toggles-switches" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='toggles-switches']">Toggles &amp; Switches</a>
+                </li>
+                
+                <li>
+                  <a href="#skip-links" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='skip-links']">Skip Links</a>
+                </li>
+                
+                <li>
+                  <a href="#fixed-positions" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='fixed-positions']">Fixed Positions</a>
+                </li>
+                
+                <li>
+                  <a href="#vertical-alignment" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='vertical-alignment']">Vertical Alignment</a>
+                </li>
+                
+                <li>
+                  <a href="#retina-images" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='retina-images']">Retina Images</a>
+                </li>
+                
+                <li>
+                  <a href="#drawers" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='drawers']">Drawers</a>
+                </li>
+                
+                <li>
+                  <a href="#modals" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='modals']">Modals</a>
+                </li>
+                
+                <li>
+                  <a href="#intrinsic-ratio-video" class="skip" gumby-update gumby-duration="600" gumby-goto="[data-target='intrinsic-ratio-video']">Intrinsic Ratio Video</a>
+                </li>
+                
+            </ul>
+          </nav>
+        </section>
+        <section class="nine columns push_one" id="docs-content">
+          
+
+          <div class="left-center" data-target="toggles-switches">
+            <h2>Toggles &amp; Switches</h2>
+            <p>We realized awhile back that a lot of Javascript was being written for the sole purpose of adding and removing classes to elements for CSS animations. We figured this was a waste of Javascript and behold, Toggles and Switches were born unto developers everywhere. Don't be mislead by the simple explanation though. While simple sounding you can build pretty complex things such as accordians, image sliders, drawers, and much more.</p>
+
+<p>Toggles and switches rely on the <code>gumby-trigger</code> attribute. With this attribute, you can do tons of things. You can hide an element, toggle an element, show a hidden element and much more. Let your imagination run wild.</p>
+
+<p><strong>Don't Forget!</strong> On its own, the <code>.active</code> class does nothing. You'll need to hide it, color it, animate it on your own.</p>
+
+<h4>Toggle an Element</h4>
+
+<p>Placing one element name inside the <code>gumby-trigger</code> attribute will add and remove <code>.active</code> upon click. In the example below we're going to toggle the #something id. By itself, nothing will happen; But create a CSS animation for the <code>.active</code> class or even something as simple as <code>display: none</code> then watch toggles and switches come to life.</p>
+
+<pre class="language-markup"><code>&lt;a href="#" class="toggle" gumby-trigger="#something"&gt;Toggle #Something!&lt;/a&gt;
+</code></pre>
+
+<h4>Toggle between Elements</h4>
+
+<p>Here we're putting two elements separated by a pipe character that will receive the <code>.active</code> class at alternating times. Below, <code>#something</code> has the active class, but upon clicking the link, the <code>.somethingelse</code> element will receive an <code>active</code> class and the <code>#something</code> element will have <code>active</code> removed.</p>
+
+<pre class="language-markup"><code>&lt;a href="#" class="toggle" gumby-trigger="#something | .somethingelse"&gt;Toggle&lt;/a&gt;
+</code></pre>
+
+<h4>Switch between elements</h4>
+
+<p>Same principle as before with toggles, just with a different class name. A switch will alternate the active class between the elements listed in <code>gumby-trigger</code> however this will only happen once.
+<code>
+&lt;a href="#" class="switch" gumby-trigger="#something | .somethingelse"&gt;Switch&lt;/a&gt;
+</code></p>
+
+<h4>Remove .active</h4>
+
+<p>With an empty selector before the pipe, Gumby knows to hide the element after the pipe on click. Note again that this is a one time action. If you need them to happen repeatedly, toggles are what you need.</p>
+
+<pre class="language-markup"><code>&lt;a href="#" class="switch" gumby-trigger=" | .somethingelse"&gt;Switch&lt;/a&gt;
+</code></pre>
+
+<h4>Bringing it together</h4>
+
+<p>Utilizing Gumby's event listening you can do things like toggling the classes on <code>mouseout</code> and <code>mouseover</code> events.</p>
+
+<pre class="language-markup"><code>&lt;a href="#" class="toggle" gumby-trigger=".selector | .another" gumby-on="mouseover mouseout"&gt;Toggle&lt;/a&gt;
+</code></pre>
+
+<h4>I can't use .active!</h4>
+
+<p>Remain calm. Your answer lies in the attribute <code>gumby-classname</code> where you can specify what class gets added to the elements in your toggles and switches.</p>
+
+<h3>Drawers and Modals</h3>
+
+<p>It just so happens that Gumby's own drawers and modals are actually built with toggles and switches. Did I not tell you how powerful this thing is? Read all about drawers and modals below.</p>
+<h4>More on Toggles and Switches</h4>
+
+<p>Both Toggles and Switches work in the same way (and in fact are handled by the same JS UI module) with only one small difference. As the name suggests, Toggles will toggle a class on a set of elements while Switches will add and remove a class only once. As simple as this sounds, complex UI elements with reasonably advanced functionality can be created using Toggles and Switches only.</p>
+
+<p>Each Toggle and Switch requires a <code>gumby-trigger</code> attribute containing one or two selectors separated by a pipe. A class of <code>.active</code> (or the class name specified in <code>gumby-classname</code>) will be added to the first selector and removed from the second. Toggles will continuously repeat this interaction, toggling the classes back and forth, whereas a Switch will perform the action only once. Neither of these selectors are actually required, you can simply provide one selector, with no pipe separator, to which the active class will be added, or supply an empty first selector in order to only remove the active class.</p>
+
+<p>Both Toggles and Switches also provide an optional <code>gumby-on</code> attribute which can be used to set the triggering event. They use the click event by default but you can set it to any number of standard JS events.</p>
+
+<p>Any element can be a Toggle or a Switch, just add the appropriate class.</p>
+
+<p>Read more on Gumby's Toggles &amp; Switches on the <a href="http://www.digitalsurgeons.com/blog/gumbys-toggles-switches/">Digital Surgeons blog</a>.</p>
+          </div>
+
+          
+
+          <div class="left-center" data-target="skip-links">
+            <h2>Skip Links</h2>
+            <p>Skip links allow you to vertically slide the window to a specific DOM element, a px point or up to the top of the page. There are two classes that can be used to define a skip link, <code>.skiplink</code> provides the same predefined styles as buttons while <code>.skip</code> can be used to create unstyled skip links.</p> 
+
+<p>Either way, add one of the classes and a <code>gumby-goto</code> attribute containing a valid css selector, a px value or simply ‘top’. Clicking the skip link will trigger the slide.</p>
+  
+<p>There are three optional attributes you can use to tweak the functionality. <code>gumby-duration</code>, <code>gumby-easing</code> and <code>gumby-offset</code>. Skip links use jQuery.animate and the <code>gumby-duration</code> and <code>gumby-easing</code> attributes are fed directly into that method. The duration should be specified in ms and the easing method as a string, any valid jQuery easing method can be used here so include the jQuery easing plugin to get creative! The <code>gumby-offset</code> attribute can be used in conjunction with the <code>gumby-goto</code> attribute and should be specified as a +/- integer e.g -10 or +100. This attribute is useful when sliding to elements with padding or margins or perhaps in conjunction with Fixed Elements.</p>
+
+<p>Something to be aware of is the fact that as your page loads and users interact with it, elements can change position which will effect the skiplinks goto point. The <code>gumby-update</code> attribute can be used to specify that the targets positions should be recalculated on every trigger.</p>
+
+<p class="skiplink medium primary"><a href="#" gumby-goto="[data-target='toggles-switches']">Go to Toggles &amp; Switches</a></p>
+<p class="skiplink medium secondary"><a href="#" gumby-goto="[data-target='fixed-positions']">Go to Fixed Positions</a></p>
+
+<pre class="line-numbers"><code class="language-markup">&lt;p class=&quot;skiplink medium primary&quot;&gt;&lt;a href=&quot;#&quot; gumby-goto=&quot;[data-target='toggles-switches']&quot;&gt;Go to Toggles &amp;amp; Switches&lt;/a&gt;&lt;/p&gt;
+&lt;p class=&quot;skiplink medium secondary&quot;&gt;&lt;a href=&quot;#&quot; gumby-goto=&quot;[data-target='fixed-positions']&quot;&gt;Go to Fixed Positions&lt;/a&gt;&lt;/p&gt;</code></pre>
+          </div>
+
+          
+
+          <div class="left-center" data-target="fixed-positions">
+            <h2>Fixed Positions</h2>
+            <p>The <code>gumby-fixed</code> attribute can be applied to any element in order to fix and pin at certain points. The fixed value can be specified as a px value, a css selector or the string 'top'. If a selector is specified, the element will be fixed when the result of the selector reaches the top of the window. If 'top' is specified then the element will be fixed as it reaches the top of the window itself and if a px value is specified the element will be fixed when the window scroll offset reaches that value.</p>
+<p>A point at which to pin the element can be specified in <code>gumby-pin</code> with the same options as <code>gumby-fixed</code>. At this point the element will become pinned rather than fixed, check out our documentation sidebar for an example of this.</p>
+<p>There are a few more attributes that can be used to help position the target element. Specify a px value in the <code>gumby-offset</code> attribute to set an offset from the fixed point, similarly a px offset for the pin point can be specified in <code>gumby-pinoffset</code>. The <code>gumby-top</code> attribute can then be used to specify the distance from the top of the window a fixed element should be, defaulting to 0.</p>
+<p>Finally, the fixed module will attempt to constrain the width of the fixed element if nested inside rows/columns, which will naturally become relative to the window and therefore lose inherited styles, this width will also be updated on window.resize. You can stop this functionality by specifying 'false' in <code>gumby-constrain</code>.</p>
+
+<div class="example-grid">
+<p class="alert default row"><i class="icon icon-eye"></i> Check out our documentation sidebar, we're using Fixed Elements.</p>
+</div>
+
+<pre class="line-numbers"><code class="language-markup">&lt;!-- will be fixed as it reaches top of window --&gt;
+&lt;div gumby-fixed=&quot;top&quot;&gt;Fix me&lt;/div&gt;
+
+&lt;!-- will be fixed at 250px scroll offset and pinned when #some-element is reached --&gt;
+&lt;div gumby-fixed=&quot;250&quot; gumby-pin=&quot;#some-element&quot;&gt;Fix me&lt;/div&gt;
+
+&lt;!-- will be fixed at 250px scroll offset and pinned at 600px --&gt;
+&lt;div gumby-fixed=&quot;250&quot; gumby-pin=&quot;600&quot;&gt;Fix me&lt;/div&gt;</code></pre>
+          </div>
+
+          
+
+          <div class="left-center" data-target="vertical-alignment">
+            <h2>Vertical Alignment</h2>
+            <p>Vertically align images and text, simply.</p>
+
+<div class="example-grid">
+    <div class="row">
+      <section class="fourteen columns">
+        <article class="valign row">
+          <div>
+            <img src="/img/img_silence_demo.jpg" width="145" />
+          </div>
+          <div>
+            <h4>Gumby Framework is cool.</h4>
+            <p>Face tattoos are not.</p>
+          </div>
+        </article>
+        <article class="valign row">
+          <div>
+            <img src="/img/img_silence_demo.jpg" width="145" />
+          </div>
+          <div>
+            <h4>Gumby Framework is cool.</h4>
+            <p>And not too mainstream.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+</div>
+
+<pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+  &lt;section class=&quot;twelve columns&quot;&gt;
+    &lt;article class=&quot;valign row&quot;&gt;
+      &lt;div&gt;
+        &lt;img src=&quot;/img/img_silence_demo.jpg&quot; width=&quot;145&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;h4&gt;Gumby Framework is cool.&lt;/h4&gt;
+        &lt;p&gt;Face tattoos are not.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;valign row&quot;&gt;
+      &lt;div&gt;
+        &lt;img src=&quot;/img/img_silence_demo.jpg&quot; width=&quot;145&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;h4&gt;Gumby Framework is cool.&lt;/h4&gt;
+        &lt;p&gt;and not too mainstream.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          
+
+          <div class="left-center" data-target="retina-images">
+            <h2>Retina Images</h2>
+            <p>With all of these devices with absurd pixel ratios, you'll undoubtedly need to serve up high-resoultion images to these fancy pieces of modern technology.</p>
+
+<p>As with just about everything in Gumby, Retina images are simple to implement. You'll need two things to continue:</p>
+
+<ul class="disc">
+<li>A regular resolution image</li>
+<li>A high resolution image</li>
+</ul>
+
+
+<p>Usage goes a little something like this: Just append "@2x" to the file name. Also keep in mind these <strong>both</strong> need to be included in the same directory.</p>
+<pre class="line-numbers language-scss"><code>images/craig_on_bearskin.jpg
+images/craig_on_bearskin@2x.jpg</code></pre>
+
+<p>Include it as you normally would in your code:</p>
+
+<pre class="line-numbers language-scss"><code>&lt;img src="/images/craig_on_bearskin.jpg" /&gt;</code></pre>
+
+<p>and then just insert <code>gumby-retina</code> in the <code>&lt;img&gt;</code> tag like such:</p>
+
+<pre class="line-numbers language-scss"><code>&lt;img src="/images/craig_on_bearskin.jpg" gumby-retina /&gt;</code></pre>
+
+<p>and devices with high-density pixel ratios will display hi-res versions of your images. So easy, a pixelated caveman could do it.</p>
+          </div>
+
+          
+
+          <div class="left-center" data-target="drawers">
+            <h2>Drawers</h2>
+            <p>The <span class="label light">.drawer</span> class sets some predefined styling as well as a 0px max height and .3s transition while the <span class="label light">.drawer.active</span> class sets an 800px max height, causing the drawer to slide open. Trigger with a toggle or switch like so.</p>
+<div class="example-grid">
+    <p class="btn medium primary">
+      <a href="#" class="switch" gumby-trigger="#drawer1">Open Top Drawer</a>
+    </p>
+    <p class="btn medium primary">
+      <a href="#" class="toggle" gumby-trigger="#drawer2|#drawer3">Toggle Bottom Drawers</a>
+    </p>
+    <p class="btn medium primary">
+      <a href="#" class="switch" gumby-trigger="|.drawer">Close All Drawers</a>
+    </p>
+    <div class="row">
+      <div class="fourteen columns">
+        <div class="drawer" id="drawer1">
+          <h2><a href="http://www.digitalsurgeons.com">Digital Surgeons</a></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="seven columns">
+        <div class="drawer" id="drawer2">
+          <h2><a href="http://www.digitalsurgeons.com">Peek</a></h2>
+        </div>
+      </div>
+      <div class="seven columns">
+        <div class="drawer" id="drawer3">
+          <h2><a href="http://www.digitalsurgeons.com">aboo</a></h2>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div>
+<pre class="line-numbers">
+<code class="language-markup">&lt;p class=&quot;btn medium primary&quot;&gt;
+  &lt;a href=&quot;#&quot;  class=&quot;switch&quot; gumby-trigger=&quot;#drawer1&quot;&gt;Open Top Drawer&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;btn medium primary&quot;&gt;
+  &lt;a href=&quot;#&quot;  class=&quot;toggle&quot; gumby-trigger=&quot;#drawer2|#drawer3&quot;&gt;Toggle Bottom Drawers&lt;/a&gt;
+&lt;/p&gt;
+&lt;p class=&quot;btn medium primary&quot;&gt;
+  &lt;a href=&quot;#&quot;  class=&quot;switch&quot; gumby-trigger=&quot;|.drawer&quot;&gt;Close All Drawers&lt;/a&gt;
+&lt;/p&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;twelve columns&quot;&gt;
+    &lt;div class=&quot;drawer&quot; id=&quot;drawer1&quot;&gt;
+      &lt;h2&gt;&lt;a href=&quot;http://www.digitalsurgeons.com&quot;&gt;Digital Surgeons&lt;/a&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;six columns&quot;&gt;
+    &lt;div class=&quot;drawer&quot; id=&quot;drawer2&quot;&gt;
+      &lt;h2&gt;&lt;a href=&quot;http://www.digitalsurgeons.com&quot;&gt;Digital Surgeons&lt;/a&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;six columns&quot;&gt;
+    &lt;div class=&quot;drawer&quot; id=&quot;drawer3&quot;&gt;
+      &lt;h2&gt;&lt;a href=&quot;http://www.digitalsurgeons.com&quot;&gt;Digital Surgeons&lt;/a&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+          </div>
+
+          
+
+          <div class="left-center" data-target="modals">
+            <h2>Modals</h2>
+            <p>The <span class="label light">.modal</span> class sets some predefined styling on a hidden modal, <span class="label light">.modal.active</span> will display the modal using z-index and opacity so as to provide a nice transition.</p>
+
+<div class="example-grid">
+       <div class="modal" id="modal1">
+		<div class="content">
+			<a class="close switch" gumby-trigger="|#modal1"><i class="icon-cancel" title=".icon-cancel"></i></a>
+			<div class="row">
+				<div class="ten columns centered text-center">
+					<h2>This is a modal.</h2>
+					<p>Gumby modals are easy to make using Toggles &amp; Switches. The <span class="label default">.modal</span> class already has the required styles which you can open and close using Toggles &amp; Switches.</p>
+                                      <p class="btn primary medium"><a href="#" class="switch" gumby-trigger="|#modal1">Close Modal</a></p>
+                              </div>
+			</div>
+		</div>
+	</div>
+<p class="btn primary medium"><a href="#" class="switch" gumby-trigger="#modal1">Open Modal</a></p>
+</div>
+
+<pre class="line-numbers">
+<code class="language-markup">&lt;div class=&quot;modal&quot; id=&quot;modal1&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;a class=&quot;close switch&quot; gumby-trigger=&quot;|#modal1&quot;&gt;&lt;i class=&quot;icon-cancel&quot; /&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;ten columns centered text-center&quot;&gt;
+        &lt;h2&gt;This is a modal.&lt;/h2&gt;
+        &lt;p&gt;Gumby modals are easy to make using Toggles &amp;amp; Switches.&lt;/p&gt;
+        &lt;p class=&quot;btn primary medium&quot;&gt;
+          &lt;a href=&quot;#&quot; class=&quot;switch&quot; gumby-trigger=&quot;|#modal1&quot;&gt;Close Modal&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p class=&quot;btn primary medium&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;switch&quot; gumby-trigger=&quot;#modal1&quot;&gt;Open Modal&lt;/a&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+
+          
+
+          <div class="left-center" data-target="intrinsic-ratio-video">
+            <h2>Intrinsic Ratio Video</h2>
+            <p>Intrinsic ratio video embeds maintain a video's aspect ratio as the browser's viewport size increases or decreases. Simply wrap your video embed inside a parent element with a class of <code>video</code>. Gumby provides three different classes to accomodate for the scrubbers different video services attach to each video embed - <code>youtube</code>, <code>vimeo</code>, and <code>twitch</code>.</p>
+
+
+
+<pre class="line-numbers  language-markup">
+<code>&lt;article class="youtube video"&gt;
+  &lt;iframe width="560" height="315" src="http://www.youtube.com/embed/N0IDkzhBQMg"&gt;&lt;/iframe &gt;
+&lt;/article&gt;
+&lt;article class="vimeo video"&gt;
+  &lt;iframe src="http://player.vimeo.com/video/50650297" width="500" height="281"&gt;&lt;/iframe &gt;
+&lt;/article&gt;</code></pre>
+
+
+<div class="row">
+  <div class="six columns">
+    <article class="youtube video">
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/N0IDkzhBQMg" frameborder="0" allowfullscreen=""></iframe>
+    </article>
+  </div>
+  <div class="six columns">
+    <article class="vimeo video">
+      <iframe src="http://player.vimeo.com/video/50650297" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+    </article>
+  </div>
+</div>
+          </div>
+
+          
+        </section>
+      </div>
+    </div>
+  <div class="wrapper shaded" id="subfoot">
+  	<section class="row">
+      <div class="eleven columns centered">
+        <div class="row">
+      		<article class="six columns">
+      			<h3 class="action">You simply <b class="embolden">have</b> to try it.</h3>
+          </article>
+          <div class="eight columns dl_and_docs">
+            <div class="medium metro rounded btn download primary"><a href="https://github.com/GumbyFramework/Gumby/archive/master.zip">Download Gumby 2</a></div>
+            
+            <div class="medium metro rounded btn dark"><a href="/docs">Read the Documentation</a></div>
+      		</div>
+        </div>
+      </div>
+  	</section>
+  </div>
+
+  <div class="wrapper">
+  	<footer class="row" id="credits">
+  		<div class="six columns">
+  			<p><span class="nobr">Developed with love</span>
+          <span class="nobr">by your friends</span>
+          <span class="nobr">at <a href="http://www.digitalsurgeons.com/" target="_blank" title="Digital Marketing Agency">Digital Surgeons</a></span>
+        </p>
+  			<p class="disclaimer">Disclaimer: Gumby Framework holds no affiliation or association with our friends at www.gumbyworld.com, Primavision Inc. or <span class="nobr">Prema Toy Inc.</span></p>
+  		</div>
+  		<div class="eight columns">
+  			<div class="row">
+          <ul class="socbtns">
+            <li><div class="btn primary"><a target="_blank" href="https://github.com/GumbyFramework/Gumby">Github</a></div></li>
+            <li><div class="btn twitter"><a target="_blank" href="https://twitter.com/gumbycss">Twitter</a></div></li>
+            <li><div class="btn facebook"><a target="_blank" href="https://www.facebook.com/gumbyframework">Facebook</a></div></li>
+            <li><div class="btn danger"><a target="_blank" href="https://plus.google.com/communities/108760896951473344451">Google+</a></div></li>
+          </ul>
+  			</div>
+  		</div>
+  	</footer>
+  </div>
+
+  <!-- Grab Google CDN's jQuery, fall back to local if offline -->
+  <!-- 2.0 for modern browsers, 1.10 for .oldie -->
+  <script>
+  var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
+  if(!oldieCheck) {
+  document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
+  } else {
+  document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
+  }
+  </script>
+  <script>
+  if(!window.jQuery) {
+  if(!oldieCheck) {
+    document.write('<script src="/bower_components/gumby/js/libs/jquery-2.0.2.min.js"><\/script>');
+  } else {
+    document.write('<script src="/bower_components/gumby/js/libs/jquery-1.10.1.min.js"><\/script>');
+  }
+  }
+  </script>
+
+  <script gumby-debug gumby-touch="/bower_components/gumby/js/libs" src="http://gumbyframework.com/js/libs/gumby.min.js?1379449666"></script>
+
+  
+  <![if gt IE 8]>
+  <script src="http://gumbyframework.com/js/libs/prism.js"></script>
+  <![endif]>
+  
+  
+  <script src="http://gumbyframework.com/js/build/docs.min.js?v=1379423984"></script>
+  
+  <script src="http://gumbyframework.com/js/build/events.min.js"></script>
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31797645-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+     chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+  <!-- Bugherd -->
+  <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=k2wxp1tsv91hmgwvxauxga';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+  </body>
+</html>
+
