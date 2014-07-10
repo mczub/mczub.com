@@ -65,7 +65,7 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-var port = process.env.port || 1337;
+var port = process.env.port;
 var server = app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
 })
