@@ -1,4 +1,4 @@
-/*var express = require('express');
+var express = require('express');
 var http = require('http');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -29,22 +29,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 //app.get('/', routes.index);
-//app.get('/', gameList.showAllGames.bind(gameList));
-//app.post('/newGame', gameList.newGame.bind(gameList));
-//app.get('/users', users.list);
+app.get('/set', gameList.showAllGames.bind(gameList));
+app.post('/set/newGame', gameList.newGame.bind(gameList));
+app.get('/set/users', users.list);
 
-var port = process.env.port || 1337;
+var port = process.env.PORT || 1337;
 var server = app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
 });
 
-app.get('/', function(req, res){
-    res.send('Hello World');
-});
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
-    var err = new Error("Could not connect to DB");
+    var err = new Error("Could not connect");
     err.status = 404;
     next(err);
 });
@@ -73,16 +70,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-*/
-
-var express = require('express');
-var app = express.createServer();
-
-app.get('/set', function(req, res){
-  res.send('Hello World');
-});
-
-var port = process.env.PORT || 1337;
-app.listen(port,function(){
-    console.log('listening on port' + port);
-});
