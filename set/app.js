@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var users = require('./routes/user');
 var GameList = require('./routes/set');
-var connectStr = process.env.CUSTOMCONNSTR_MONGOLAB_URI
+var connectStr = process.env.CUSTOMCONNSTR_MONGOLAB_URI;
 var gameList = new GameList(connectStr);
 //var gameList = new GameList('localhost');
 
