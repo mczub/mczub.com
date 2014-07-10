@@ -6,11 +6,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//var routes = require('./routes');
-//var users = require('./routes/user');
-//var GameList = require('./routes/set');
-//var connectStr = process.env.APPSETTING_MONGOLAB_URI;
-//var gameList = new GameList(connectStr);
+var routes = require('./routes');
+var users = require('./routes/user');
+var GameList = require('./routes/set');
+var connectStr = process.env.APPSETTING_MONGOLAB_URI;
+var gameList = new GameList(connectStr);
 //var gameList = new GameList('localhost');
 
 var app = express();
