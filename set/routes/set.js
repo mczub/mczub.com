@@ -24,6 +24,6 @@ SetGame.prototype = {
 				throw err;
 			}
 		});
-		res.redirect('/');
+		res.redirect('../');
 	},
 }
