@@ -33,6 +33,11 @@ app.get('/', gameList.showAllGames.bind(gameList));
 app.post('/newGame', gameList.newGame.bind(gameList));
 app.get('/users', users.list);
 
+var port = process.env.port || 1337;
+var server = app.listen(port,function(){
+    console.log('listening on port %d', server.address().port);
+});
+
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error("Could not connect to DB");
@@ -65,7 +70,4 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-var port = process.env.port || 1337;
-var server = app.listen(port,function(){
-    console.log('listening on port %d', server.address().port);
-})
+
