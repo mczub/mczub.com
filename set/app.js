@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var http = require('http');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -73,5 +73,16 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+*/
 
+var express = require('express');
+var app = express();
 
+app.get('/', function(req, res){
+  res.send('Hello World');
+});
+
+var port = process.env.port || 1337;
+var server = app.listen(port,function(){
+    console.log('listening on port %d', server.address().port);
+});
