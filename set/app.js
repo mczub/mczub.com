@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 //app.get('/', routes.index);
-app.get('/'), gameList.showAllGames.bind(gameList));
-app.post('/newGame', gamelist.newGame.bind(gameList));
+app.get('/', gameList.showAllGames.bind(gameList));
+app.post('/newGame', gameList.newGame.bind(gameList));
 app.get('/users', users.list);
 
 /// catch 404 and forwarding to error handler
