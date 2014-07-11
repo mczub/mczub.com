@@ -11,7 +11,7 @@ table(border="1")
 			td #{game.playerState.score}
 			td 
 				each card in game.boardState
-					#{card}
+					#{card.card}
 			td #{game.deckState}
 hr
 form(action="/set/newGame", method="post")
