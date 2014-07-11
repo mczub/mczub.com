@@ -37,9 +37,6 @@ var port = process.env.PORT || 1337;
 var server = app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
 });
-var io = require('socket.io').listen(app.listen(port,function(){
-    console.log('listening on port %d', server.address().port);
-}););
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
