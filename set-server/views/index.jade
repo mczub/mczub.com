@@ -1,0 +1,23 @@
+h1 server
+table(border="1")
+	tr
+		td Player
+		td Score
+		td Board
+		td Deck
+	each game in games
+		tr
+			td #{game.playerState.name}
+			td #{game.playerState.score}
+			td 
+				each card in game.boardState
+					#{card}
+			td #{game.deckState}
+hr
+form(action="/set/newGame", method="post")
+	table(border="1") 
+		tr
+			td Player Name: 
+			td 
+				input(name="player", type="textbox")
+	input(type="submit", value="New Game")

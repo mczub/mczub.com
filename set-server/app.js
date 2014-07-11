@@ -29,17 +29,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 //app.get('/', routes.index);
-app.get('/set', gameList.showAllGames.bind(gameList));
-app.post('/set/newGame', gameList.newGame.bind(gameList));
-app.get('/set/users', users.list);
+app.get('/set-server', gameList.showAllGames.bind(gameList));
+app.post('/set-server/newGame', gameList.newGame.bind(gameList));
+app.get('/set-server/users', users.list);
 
 var port = process.env.PORT || 1337;
 var server = app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
 });
-var io = require('socket.io').listen(app.listen(port,function(){
-    console.log('listening on port %d', server.address().port);
-}););
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
