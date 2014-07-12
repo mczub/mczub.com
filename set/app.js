@@ -40,16 +40,18 @@ var port = process.env.PORT || 1337;
     console.log('listening on port %d', server.address().port);
 });*/
 
-var ioserver = http.Server(app);
-var io = sio(ioserver);
-ioserver.listen(port);
-//config to work in azure subdirectory
-io.configure(function() {
+/*io.configure(function() {
     io.set('transports', [ 'websocket' ]);
     if (process.env.IISNODE_VERSION) {
         io.set('resource', '/set/socket.io');
     }
-});
+});*/
+
+var ioserver = http.Server(app);
+var io = sio(ioserver);
+ioserver.listen(port);
+//config to work in azure subdirectory
+
 io.on('connection', function(socket){
     //socket.emit('announcement', 'Server connected.');
     console.log('socket.io server connected.');
