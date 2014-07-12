@@ -1,4 +1,4 @@
-script(src="/set/socket.io/socket.io.js")
+script(src="/socket.io/socket.io.js")
 script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
 h1 server
 table(border="1")
@@ -25,7 +25,12 @@ form(action="/set/newGame", method="post")
 	input(type="submit", value="New Game")
 hr
 script.
-	var socket = io.connect();
+	var address = window.location.protocol + '//' + window.location.host;
+	var details = {
+	    resource: (window.location.pathname.split('/').slice(0, -1).join('/') + '/socket.io').substring(1)
+	};
+
+	var socket = io.connect(address, details); 
 	socket.on('announcement', function(data)
 	{
 		displayMessage(data.message);
