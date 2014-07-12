@@ -9,7 +9,7 @@ var sio = require('socket.io');
 
 var routes = require('./routes');
 var users = require('./routes/user');
-var GameList = require('./routes/set');
+var GameList = require('./routes/status');
 var connectStr = process.env.APPSETTING_MONGOLAB_URI;
 var gameList = new GameList(connectStr);
 //var gameList = new GameList('localhost');
@@ -34,6 +34,7 @@ app.use(app.router);
 app.get('/set', gameList.showAllGames.bind(gameList));
 app.post('/set/newGame', gameList.newGame.bind(gameList));
 app.get('/set/users', users.list);
+app.get('/set/status', gameList.showAllGames.bind(gameList));
 
 var port = process.env.PORT || 1337;
 /*var server = app.listen(port,function(){
@@ -53,7 +54,7 @@ if (process.env.IISNODE_VERSION) {
 
 io.on('connection', function(socket){
     //socket.emit('announcement', 'Server connected.');
-    console.log('socket.io server connected.');
+    console.log('socket.io client connected.');
     socket.on('message', function(data)
     {
         io.sockets.emit('message',{message: data.message});
