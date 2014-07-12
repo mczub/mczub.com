@@ -1,4 +1,4 @@
-h1 title
+h1 server
 table(border="1")
 	tr
 		td Player
@@ -9,7 +9,9 @@ table(border="1")
 		tr
 			td #{game.playerState.name}
 			td #{game.playerState.score}
-			td #{game.boardState}
+			td 
+				each card in game.boardState
+					#{card.card}
 			td #{game.deckState}
 hr
 form(action="/set/newGame", method="post")
@@ -19,3 +21,8 @@ form(action="/set/newGame", method="post")
 			td 
 				input(name="player", type="textbox")
 	input(type="submit", value="New Game")
+hr
+Socket events:
+input (name="message" type="textbox")
+input (value="Send Message" type="submit" onclick="sendMessage();")
+div (id="output")
