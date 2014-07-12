@@ -1,3 +1,5 @@
+script(src="/socket.io/socket.io.js")
+script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
 h1 server
 table(border="1")
 	tr
@@ -22,7 +24,25 @@ form(action="/set/newGame", method="post")
 				input(name="player", type="textbox")
 	input(type="submit", value="New Game")
 hr
+script.
+	var socket = io.connect();
+	socket.on('announcement', function(data)
+	{
+		displayMessage(data.message);
+	});
+	socket.on('message', function(data)
+	{
+		displayMessage(data.message);
+	});
+	function sendMessage()
+	{
+		socket.emit('message', {message: $("#mbox").val()});
+	};
+	function displayMessage(message)
+	{
+		$("#output").append(message + "<br/>");
+	};
 p Socket events:
-input(name="message" type="textbox")
+input(id="mbox" type="textbox")
 input(value="Send Message" type="submit" onclick="sendMessage();")
 div(id="output")

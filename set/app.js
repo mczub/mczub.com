@@ -5,6 +5,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sio = require('socket.io');
 
 var routes = require('./routes');
 var users = require('./routes/user');
@@ -29,13 +30,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 //app.get('/', routes.index);
+
 app.get('/set', gameList.showAllGames.bind(gameList));
 app.post('/set/newGame', gameList.newGame.bind(gameList));
 app.get('/set/users', users.list);
 
 var port = process.env.PORT || 1337;
-var server = app.listen(port,function(){
+/*var server = app.listen(port,function(){
     console.log('listening on port %d', server.address().port);
+});*/
+
+var ioserver = http.Server(app);
+var io = sio(ioserver);
+ioserver.listen(port);
+io.on('connection', function(socket){
+    //socket.emit('announcement', 'Server connected.');
+    console.log('socket.io server connected.');
+    socket.on('message', function(data)
+    {
+        io.sockets.emit('message',{message: data.message});
+        console.log(data.message);
+    });
 });
 
 /// catch 404 and forwarding to error handler
