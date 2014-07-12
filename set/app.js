@@ -11,8 +11,8 @@ var routes = require('./routes');
 var users = require('./routes/user');
 var GameList = require('./routes/set');
 var connectStr = process.env.APPSETTING_MONGOLAB_URI;
-var gameList = new GameList(connectStr);
-//var gameList = new GameList('localhost');
+//var gameList = new GameList(connectStr);
+var gameList = new GameList('localhost');
 
 var app = express();
 
@@ -40,17 +40,16 @@ var port = process.env.PORT || 1337;
     console.log('listening on port %d', server.address().port);
 });*/
 
-/*io.configure(function() {
-    io.set('transports', [ 'websocket' ]);
-    if (process.env.IISNODE_VERSION) {
-        io.set('resource', '/set/socket.io');
-    }
-});*/
+
 
 var ioserver = http.Server(app);
 var io = sio(ioserver);
 ioserver.listen(port);
 //config to work in azure subdirectory
+//io.set('transports', [ 'websocket' ]);
+if (process.env.IISNODE_VERSION) {
+    io.set('resource', '/set/socket.io');
+}
 
 io.on('connection', function(socket){
     //socket.emit('announcement', 'Server connected.');
