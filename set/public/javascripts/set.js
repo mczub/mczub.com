@@ -34,7 +34,7 @@ function updateGameID(gameid){
 function redraw(board){
 	for (var j = 0; j < board.length; j++){
 		var pic = document.createElement("img");
-		pic.src = "/images/" + board[j].card +".png";
+		pic.src = "/set/images/" + board[j].card +".png";
 		pic.alt = j;
 		pic.id = board[j].card;
 		pic.className="card";
