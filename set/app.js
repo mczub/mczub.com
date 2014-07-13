@@ -10,9 +10,11 @@ var sio = require('socket.io');
 var routes = require('./routes');
 var users = require('./routes/user');
 var GameList = require('./routes/status');
+var SetGame = require('./routes/set');
 var connectStr = process.env.APPSETTING_MONGOLAB_URI;
-var gameList = new GameList(connectStr);
-//var gameList = new GameList('localhost');
+//var gameList = new GameList(connectStr);
+var gameList = new GameList('localhost');
+var setGame = new SetGame('localhost');
 
 var app = express();
 
@@ -31,7 +33,7 @@ app.use(app.router);
 
 //app.get('/', routes.index);
 
-app.get('/set', gameList.showAllGames.bind(gameList));
+app.get('/set', setGame.playGame.bind(setGame));
 app.post('/set/newGame', gameList.newGame.bind(gameList));
 app.get('/set/users', users.list);
 app.get('/set/status', gameList.showAllGames.bind(gameList));
@@ -59,6 +61,25 @@ io.on('connection', function(socket){
     {
         io.sockets.emit('message',{message: data.message});
         console.log(data.message);
+    });
+    socket.on('newGame', function(data)
+    {
+        setGame.newGame({player: data.player}, function(gameData)
+            {
+                io.sockets.emit('message',{message: data.player +" started new game id:" + gameData._id});
+                io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+            });
+        console.log(data.player + " started new game");
+    });
+    socket.on('noSet', function(data)
+    {
+        setGame.drawCard(data.id, 3, function(status){
+            io.sockets.emit('status', {message: status});
+        },
+        function(gameData){
+            io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+        });
+        
     });
 });
 

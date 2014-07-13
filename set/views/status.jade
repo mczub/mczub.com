@@ -1,29 +1,5 @@
 script(src="/socket.io/socket.io.js")
 script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
-h1 server
-table(border="1")
-	tr
-		td Player
-		td Score
-		td Board
-		td Deck
-	each game in games
-		tr
-			td #{game.playerState.name}
-			td #{game.playerState.score}
-			td 
-				each card in game.boardState
-					#{card.card}
-			td #{game.deckState}
-hr
-form(action="/set/newGame", method="post")
-	table(border="1") 
-		tr
-			td Player Name: 
-			td 
-				input(name="player", type="textbox")
-	input(type="submit", value="New Game")
-hr
 script.
 	var address = window.location.protocol + '//' + window.location.host;
 	var details = {
@@ -47,6 +23,37 @@ script.
 	{
 		$("#output").append(message + "<br/>");
 	};
+	function newGame()
+	{
+		socket.emit('newGame', {player: $("#player").val()});
+	}
+h1 server
+table(border="1")
+	tr
+		td Player
+		td Score
+		td Board
+		td Deck
+	each game in games
+		tr
+			td #{game.playerState.name}
+			td #{game.playerState.score}
+			td 
+				each card in game.boardState
+					#{card.card}
+			td
+				each card in game.deckState
+					#{card.card}
+hr
+//form(action="/set/newGame", method="post")
+table(border="1") 
+	tr
+		td Player Name: 
+		td 
+			input(id="player", type="textbox")
+input(type="submit", value="New Game", onclick="newGame();")
+hr
+
 p Socket events:
 input(id="mbox" type="textbox")
 input(value="Send Message" type="submit" onclick="sendMessage();")
