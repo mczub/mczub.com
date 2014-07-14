@@ -10,18 +10,14 @@ script(src="/set/javascripts/set.js")
 body
 	table(id="scoreTable")
 		tr
-			td Name: 
-			td
+			td(id="score" class="score") Score
+			td Name:
 				input(id="player", type="textbox")
 		tr
-			td(id="score" class="score") Score
 			td(id="cardsLeft" class="score") Cards Remaining
-		tr
 			td 
-				div(id="status" class="status")
-			td 
-				input(type="button" value="No Set" id="noset" onclick="noSet();")
-			
+				input(type="button" value="No Set" id="noset" onclick="noSet();")	
+	div(id="status" class="status")		
 	table(id="setTable")
 		tr
 			td

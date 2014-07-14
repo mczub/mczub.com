@@ -11,7 +11,10 @@ var routes = require('./routes');
 var users = require('./routes/user');
 var GameList = require('./routes/status');
 var SetGame = require('./routes/set');
-var connectStr = process.env.APPSETTING_MONGOLAB_URI;
+var connectStr = 'localhost';
+if (process.env.IISNODE_VERSION) {
+    connectStr = process.env.APPSETTING_MONGOLAB_URI;
+}
 //var gameList = new GameList('localhost');
 //var setGame = new SetGame('localhost');
 var gameList = new GameList(connectStr);
