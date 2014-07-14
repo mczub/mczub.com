@@ -1,5 +1,10 @@
 var socket = io.connect(address, details);
 var thisID;
+
+$(document).on("click", ".card", function(){
+	clickedCard($(this));
+});
+
 socket.on('message', function(data)
 {
 	displayMessage("message: " + data.message);
@@ -32,17 +37,32 @@ function updateGameID(gameid){
 };
 
 function redraw(board){
+	var allcells = $('#setTable td');
+	allcells.empty();
 	for (var j = 0; j < board.length; j++){
 		var pic = document.createElement("img");
 		pic.src = "/set/images/" + board[j].card +".png";
 		pic.alt = j;
 		pic.id = board[j].card;
 		pic.className="card";
-		pic.setAttribute("onclick","clickedCard(this.alt, this.id);");
+		//pic.setAttribute("onclick","clickedCard(this);");
 		var cells = $('#setTable td');
 		var children = cells[j].childNodes;
 		if (cells[j].childNodes[0] != null) cells[j].removeChild(cells[j].childNodes[0]);
 		cells[j].appendChild(pic);
+	}
+}
+
+function clickedCard(obj)
+{
+	$(obj).toggleClass('selected');
+	var selectedCards = $('.selected');
+	if (selectedCards.length == 3){
+		var selCardText = [];
+		selCardText.push(selectedCards[0].id);
+		selCardText.push(selectedCards[1].id);
+		selCardText.push(selectedCards[2].id);
+		socket.emit('makeSet', {id: thisID, set: selCardText});
 	}
 }
 

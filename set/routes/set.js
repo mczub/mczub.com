@@ -66,6 +66,34 @@ SetGame.prototype = {
 			});
 		});
 		
+	},
+	makeSet: function(data, status, board){
+		game.findById(data.id, function(err, thisGame){
+			var theBoard = thisGame.boardState;
+			for (var j = 0; j <= 2; j++){
+				if (!containsCard(theBoard, data.set[j])){
+					status("Could not find card.");
+					return;
+				}
+				console.log(theBoard);
+				console.log({card: data.set[j]});
+			}
+			if (!isASet(data.set)){
+				status("Not a set.");
+				return;
+			}
+			for (var j = 0; j <= 2; j++){
+				removeCard(theBoard, data.set[j]);
+			}
+			thisGame.boardState = theBoard;
+			status("Made a set!")
+			thisGame.save(function savedGame(err, obj){
+				if (err){
+					throw err;
+				}
+				board(obj)
+			});
+		});
 	}
 };
 
@@ -73,3 +101,30 @@ function shuffle(o){ //v1.0
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
+
+function xform(doc,ret,options){
+	delete ret._id;
+};
+
+function containsCard(board, card){
+	var i = board.length;
+	while (i--){
+		if (board[i].card === card){
+			return true;
+		}
+	}
+	return false;
+}
+
+function removeCard(board, card){
+	var i = board.length;
+	while (i--){
+		if (board[i].card === card){
+			board.splice(i,1);
+		}
+	};
+}
+
+function isASet(cards){
+	return true;
+}

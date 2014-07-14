@@ -1,6 +1,6 @@
+script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
 link(rel='stylesheet', href='/set/stylesheets/set.css')
 script(src="/socket.io/socket.io.js")
-script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
 script.
 	var address = window.location.protocol + '//' + window.location.host;
 	var details = {
@@ -11,22 +11,17 @@ body
 	table(id="scoreTable")
 		tr
 			td Name: 
+			td
 				input(id="player", type="textbox")
-			td 
-				input(type="button" value="New Game" id="newgame" onclick="newGame();")
-			td 
-				input(type="button" value="No Set" id="noset" onclick="noSet();")
-			
 		tr
 			td(id="score" class="score") Score
-			td
 			td(id="cardsLeft" class="score") Cards Remaining
 		tr
 			td 
 				div(id="status" class="status")
-			td
-			td
-				div(id="gameid" class="score") Game ID
+			td 
+				input(type="button" value="No Set" id="noset" onclick="noSet();")
+			
 	table(id="setTable")
 		tr
 			td
@@ -52,7 +47,12 @@ body
 			td
 			td
 			td
-
+	table
+		tr
+			td
+				div(id="gameid" class="score") Game ID
+			td 
+				input(type="button" value="New Game" id="newgame" onclick="newGame();")
 	p Socket events:
 	input(id="mbox" type="textbox")
 	input(value="Send Message" type="submit" onclick="sendMessage();")

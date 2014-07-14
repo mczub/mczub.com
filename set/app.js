@@ -12,10 +12,10 @@ var users = require('./routes/user');
 var GameList = require('./routes/status');
 var SetGame = require('./routes/set');
 var connectStr = process.env.APPSETTING_MONGOLAB_URI;
-var gameList = new GameList(connectStr);
-var setGame = new SetGame(connectStr);
-//var gameList = new GameList('localhost');
-//var setGame = new SetGame('localhost');
+//var gameList = new GameList(connectStr);
+//var setGame = new SetGame(connectStr);
+var gameList = new GameList('localhost');
+var setGame = new SetGame('localhost');
 
 var app = express();
 
@@ -82,6 +82,15 @@ io.on('connection', function(socket){
         });
         
     });
+    socket.on('makeSet', function(data)
+    {
+        setGame.makeSet(data, function(status){
+            io.sockets.emit('status', {message: status});
+        },
+        function(gameData){
+            io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+        });
+    })
 });
 
 /// catch 404 and forwarding to error handler
