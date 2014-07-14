@@ -13,6 +13,7 @@ socket.on('boardState', function(data)
 {
 	//displayMessage(data.boardState[1].card);
 	updateGameID(data.id);
+	updateScore(data.score, data.cardsLeft);
 	thisID = data.id;
 	redraw(data.boardState);
 });
@@ -34,6 +35,10 @@ function newGame()
 };
 function updateGameID(gameid){
 	$("#gameid").html("Game ID: <b>"+gameid+"</b>");
+};
+function updateScore(score, cardsLeft){
+	$("#score").html("Score: <b>"+score+"</b>");
+	$("#cardsLeft").html("Cards Remaining: <b>"+cardsLeft+"</b>");
 };
 
 function redraw(board){

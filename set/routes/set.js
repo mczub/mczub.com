@@ -86,6 +86,7 @@ SetGame.prototype = {
 				removeCard(theBoard, data.set[j]);
 			}
 			thisGame.boardState = theBoard;
+			thisGame.playerState.score++;
 			status("Made a set!")
 			thisGame.save(function savedGame(err, obj){
 				if (err){

@@ -58,6 +58,15 @@ if (process.env.IISNODE_VERSION) {
     io.set('resource', '/set/socket.io');
 }
 
+function sendState(gameData){
+    io.sockets.emit('boardState', {
+        id: gameData._id, 
+        score: gameData.playerState.score, 
+        boardState: gameData.boardState,
+        cardsLeft: gameData.deckState.length + gameData.boardState.length
+    });
+}
+
 io.on('connection', function(socket){
     //socket.emit('announcement', 'Server connected.');
     console.log('socket.io client connected.');
@@ -71,7 +80,7 @@ io.on('connection', function(socket){
         setGame.newGame({player: data.player}, function(gameData)
             {
                 io.sockets.emit('message',{message: data.player +" started new game id:" + gameData._id});
-                io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+                sendState(gameData);
             });
         console.log(data.player + " started new game");
     });
@@ -81,9 +90,8 @@ io.on('connection', function(socket){
             io.sockets.emit('status', {message: status});
         },
         function(gameData){
-            io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+            sendState(gameData)
         });
-        
     });
     socket.on('makeSet', function(data)
     {
@@ -91,7 +99,7 @@ io.on('connection', function(socket){
             io.sockets.emit('status', {message: status});
         },
         function(gameData){
-            io.sockets.emit('boardState', {id: gameData._id, boardState: gameData.boardState});
+            sendState(gameData)
         });
     })
 });
@@ -124,6 +132,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;
