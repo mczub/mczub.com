@@ -10,8 +10,8 @@ script(src="/set/javascripts/set.js")
 body
 	table(id="scoreTable")
 		tr
-			td Name:
-				input(id="player", type="textbox")
+			td 
+				input(type="button" value="New Game" id="newgame" onclick="newGame();")
 			td(id="score" class="score") Score
 		tr
 			td
@@ -45,10 +45,10 @@ body
 			td
 	table
 		tr
+			td Name:
+				input(id="player", type="textbox")
 			td
 				div(id="gameid" class="score") Game ID
-			td 
-				input(type="button" value="New Game" id="newgame" onclick="newGame();")
 	p Socket events:
 	input(id="mbox" type="textbox")
 	input(value="Send Message" type="submit" onclick="sendMessage();")
