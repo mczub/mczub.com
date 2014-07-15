@@ -10,13 +10,19 @@ script(src="/set/javascripts/set.js")
 body
 	table(id="scoreTable")
 		tr
-			td 
+			td(class="status")
 				input(type="button" value="New Game" id="newgame" onclick="newGame();")
 			td(id="score" class="score") Score
 		tr
-			td
+			td(class="status")
 				input(type="button" value="No Set" id="noset" onclick="noSet();")
 			td(id="cardsLeft" class="score") Cards Remaining
+	table
+		tr
+			td(class="status") Name:
+				input(id="player", type="textbox")
+			td(class="score")
+				div(id="gameid" class="score") Game ID
 	div(id="status" class="status") Welcome to Set!
 	table(id="setTable")
 		tr
@@ -43,13 +49,8 @@ body
 			td
 			td
 			td
-	table
-		tr
-			td Name:
-				input(id="player", type="textbox")
-			td
-				div(id="gameid" class="score") Game ID
-	p Socket events:
-	input(id="mbox" type="textbox")
-	input(value="Send Message" type="submit" onclick="sendMessage();")
-	div(id="output")
+
+	//p Socket events:
+	//input(id="mbox" type="textbox")
+	//input(value="Send Message" type="submit" onclick="sendMessage();")
+	//div(id="output")

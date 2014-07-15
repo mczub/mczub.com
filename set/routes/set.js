@@ -70,22 +70,31 @@ SetGame.prototype = {
 	makeSet: function(data, status, board){
 		game.findById(data.id, function(err, thisGame){
 			var theBoard = thisGame.boardState;
+			var theDeck = thisGame.deckState;
 			for (var j = 0; j <= 2; j++){
 				if (!containsCard(theBoard, data.set[j])){
 					status("Could not find card.");
 					return;
 				}
-				console.log(theBoard);
-				console.log({card: data.set[j]});
+				//console.log(theBoard);
+				//console.log({card: data.set[j]});
 			}
 			if (!isASet(data.set)){
 				status("Not a set.");
 				return;
 			}
 			for (var j = 0; j <= 2; j++){
-				removeCard(theBoard, data.set[j]);
+				if (theBoard.length <= 12 && theDeck.length > 0){
+					console.log(theBoard);
+					replaceCard(theBoard, data.set[j], theDeck.splice(0,1)[0].card);
+					console.log(theBoard);
+				}else{
+					removeCard(theBoard, data.set[j]);
+				}
+				
 			}
 			thisGame.boardState = theBoard;
+			thisGame.deckState = theDeck;
 			thisGame.playerState.score++;
 			status("Made a set!")
 			thisGame.save(function savedGame(err, obj){
@@ -124,6 +133,16 @@ function removeCard(board, card){
 			board.splice(i,1);
 		}
 	};
+}
+
+function replaceCard(board, oldCard, newCard)
+{
+	var i = board.length;
+	while (i--){
+		if (board[i].card === oldCard){
+			board[i].card = newCard;
+		}
+	}
 }
 
 function isASet(cards){

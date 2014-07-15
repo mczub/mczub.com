@@ -43,7 +43,11 @@ function updateScore(score, cardsLeft){
 
 function redraw(board){
 	var allcells = $('#setTable td');
-	allcells.empty();
+	if (allcells.length > board.length){
+		for (var j = board.length; j < allcells.length; j++){
+			allcells.eq(j).empty();
+		};
+	};
 	for (var j = 0; j < board.length; j++){
 		var pic = document.createElement("img");
 		pic.src = "/set/images/" + board[j].card +".png";
@@ -52,10 +56,15 @@ function redraw(board){
 		pic.className="card";
 		//pic.setAttribute("onclick","clickedCard(this);");
 		var cells = $('#setTable td');
+		var cards = $('#setTable td img')
 		var children = cells[j].childNodes;
-		if (cells[j].childNodes[0] != null) cells[j].removeChild(cells[j].childNodes[0]);
+		if (cells[j].childNodes[0] != null){
+			if (cells[j].childNodes[0].id === pic.id){ continue; }
+			cells[j].removeChild(cells[j].childNodes[0]);
+		}
 		cells[j].appendChild(pic);
-	}
+	};
+
 }
 
 function clickedCard(obj)
