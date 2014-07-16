@@ -87,7 +87,7 @@ io.on('connection', function(socket){
     socket.on('noSet', function(data)
     {
         setGame.drawCard(data.id, 3, function(status){
-            socket.broadcast.to(socket.id).emit('status', {message: status});
+            io.sockets.to(socket.id).emit('status', {message: status});
         },
         function(gameData){
             sendState(socket.id, gameData)
@@ -96,7 +96,7 @@ io.on('connection', function(socket){
     socket.on('makeSet', function(data)
     {
         setGame.makeSet(data, function(status){
-            socket.broadcast.to(socket.id).emit('status', {message: status});
+            io.sockets.to(socket.id).emit('status', {message: status});
         },
         function(gameData){
             sendState(socket.id, gameData)

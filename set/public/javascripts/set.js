@@ -1,10 +1,40 @@
 var socket = io.connect(address, details);
 var thisID;
 var mySocketID = socket.id;
+var playerName;
+var isGuest;
 
+$(window).load(function(){
+	if (localStorage.getItem('name') === null){
+		$('#nameModal').modal('show');
+	}else{
+		isGuest = false;
+		newGame(isGuest);
+	}
+	
+});
 $(document).on("click", ".card", function(){
 	clickedCard($(this));
 });
+$(document).on("click", "#play", function(){
+	localStorage.name = $("#player").val();
+	isGuest = false;
+	newGame(isGuest);
+});
+$(document).on("click", "#playGuest", function(){
+	localStorage.clear('name');
+	isGuest = true;
+	newGame(isGuest);
+});
+$(document).on("click", "#editName", function(){
+	$('#newGameModal').modal('show');
+});
+$(document).on("click", "#rename", function(){
+	$('#newGameModal').modal('hide');
+	localStorage.clear('name');
+	$('#nameModal').modal('show');
+});
+
 
 socket.on('message', function(data)
 {
@@ -30,9 +60,25 @@ function displayMessage(message)
 {
 	$("#output").append(message + "<br/>");
 };
-function newGame()
+function newGame(guest)
 {
-	socket.emit('newGame', {player: $("#player").val()});
+	if(guest) { 
+		playerName = ''; 
+		$('#name').html("Playing as Guest");
+	}else { 
+		playerName = localStorage.name;
+		$('#name').html("Name: <b>"+playerName+"</b>");
+	}
+	$('#name').append("   <a><span class='glyphicon glyphicon-pencil' id='editName'> </span></a>");
+	socket.emit('newGame', {player: playerName});
+	$('#nameModal').modal('hide');
+};
+function newGameGuest()
+{
+	playerName = '';
+	socket.emit('newGame', {player: playerName});
+	$('#nameModal').modal('hide')
+	
 };
 function updateGameID(gameid){
 	$("#gameid").html("Game ID: <b>"+gameid+"</b>");
@@ -40,6 +86,7 @@ function updateGameID(gameid){
 function updateScore(score, cardsLeft){
 	$("#score").html("Score: <b>"+score+"</b>");
 	$("#cardsLeft").html("Cards Remaining: <b>"+cardsLeft+"</b>");
+
 };
 
 function redraw(board){

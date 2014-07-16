@@ -1,5 +1,8 @@
 script(src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js")
 link(rel='stylesheet', href='/set/stylesheets/set.css')
+link(rel='stylesheet', href='/set/bootstrap/css/bootstrap.min.css')
+link(rel='stylesheet', href='/set/bootstrap/css/bootstrap-theme.min.css')
+script(src="/set/bootstrap/js/bootstrap.min.js")
 script(src="/socket.io/socket.io.js")
 script.
 	var address = window.location.protocol + '//' + window.location.host;
@@ -7,6 +10,28 @@ script.
 		resource: (window.location.pathname.split('/').slice(0, -1).join('/') + '/socket.io').substring(1)
 	};
 script(src="/set/javascripts/set.js")
+
+div(class="modal fade" id="nameModal" data-backdrop="static")
+	div(class="modal-dialog")
+		div(class="modal-content")
+			div(class="modal-body")
+				p Enter a username!
+				p Name: 
+					input(id="player",  type="textbox")
+				input(type="button" class="btn btn-primary" value="Play" id="play")
+				p
+				p Or play as a guest
+				input(type="button" class="btn btn-default" value="Play as guest" id="playGuest")
+div(class="modal fade" id="newGameModal")
+	div(class="modal-dialog")
+		div(class="modal-content")
+			div(class="modal-body")
+				p This will start a new game.
+				p Are you sure?
+			div(class="modal-footer")
+				input(type="button" class="btn btn-default" value="Yes" id="rename")
+				input(type="button" class="btn btn-default" value="No" data-dismiss="modal")
+
 body
 	table(id="scoreTable")
 		tr
@@ -19,10 +44,10 @@ body
 			td(id="cardsLeft" class="score") Cards Remaining
 	table
 		tr
-			td(class="status") Name:
-				input(id="player", type="textbox")
+			td(class="status" id="name")
 			td(class="score")
 				div(id="gameid" class="score") Game ID
+	p
 	div(id="status" class="status") Welcome to Set!
 	table(id="setTable")
 		tr
