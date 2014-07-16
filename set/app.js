@@ -58,8 +58,8 @@ if (process.env.IISNODE_VERSION) {
     io.set('resource', '/set/socket.io');
 }
 
-function sendState(gameData){
-    io.sockets.emit('boardState', {
+function sendState(id, gameData){
+    io.sockets.to(id).emit('boardState', {
         id: gameData._id, 
         score: gameData.playerState.score, 
         boardState: gameData.boardState,
@@ -80,26 +80,26 @@ io.on('connection', function(socket){
         setGame.newGame({player: data.player}, function(gameData)
             {
                 io.sockets.emit('message',{message: data.player +" started new game id:" + gameData._id});
-                sendState(gameData);
+                sendState(socket.id, gameData);
             });
         console.log(data.player + " started new game");
     });
     socket.on('noSet', function(data)
     {
         setGame.drawCard(data.id, 3, function(status){
-            io.sockets.emit('status', {message: status});
+            socket.broadcast.to(socket.id).emit('status', {message: status});
         },
         function(gameData){
-            sendState(gameData)
+            sendState(socket.id, gameData)
         });
     });
     socket.on('makeSet', function(data)
     {
         setGame.makeSet(data, function(status){
-            io.sockets.emit('status', {message: status});
+            socket.broadcast.to(socket.id).emit('status', {message: status});
         },
         function(gameData){
-            sendState(gameData)
+            sendState(socket.id, gameData)
         });
     })
 });

@@ -1,5 +1,6 @@
 var socket = io.connect(address, details);
 var thisID;
+var mySocketID = socket.id;
 
 $(document).on("click", ".card", function(){
 	clickedCard($(this));
